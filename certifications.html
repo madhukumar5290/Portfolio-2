@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Certifications | Madhu Kumar Sikilammetla</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:3.5rem}
+.cert-card{background:var(--bg2);padding:2.5rem;transition:background .3s;position:relative;overflow:hidden}
+.cert-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:0;background:var(--accent);transition:height .3s}
+.cert-card:hover{background:var(--bg3)}.cert-card:hover::before{height:100%}
+.cert-icon{font-size:2.5rem;margin-bottom:1.25rem;display:block}
+.cert-issuer{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem}
+.cert-name{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:400;color:var(--white);line-height:1.25;margin-bottom:.75rem}
+.cert-desc{font-family:'Cormorant Garamond',serif;font-size:.95rem;line-height:1.6;color:var(--muted)}
+.cert-year{font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.1em;color:var(--muted);margin-top:1.25rem;padding-top:1rem;border-top:1px solid var(--border)}
+.badge{display:inline-block;font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.08em;text-transform:uppercase;padding:.2rem .6rem;margin-top:.5rem}
+.badge-gold{background:rgba(212,168,83,.15);color:var(--accent);border:1px solid rgba(212,168,83,.3)}
+.badge-blue{background:rgba(79,209,197,.1);color:var(--accent2);border:1px solid rgba(79,209,197,.25)}
+.learning-path{margin-top:6rem}
+.lp-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);margin-top:2rem}
+.lp-item{background:var(--bg2);padding:2rem;display:flex;gap:1.5rem;align-items:flex-start}
+.lp-num{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:300;color:var(--accent);line-height:1;flex-shrink:0}
+.lp-title{font-family:'Syne',sans-serif;font-size:.9rem;font-weight:600;color:var(--white);margin-bottom:.3rem}
+.lp-sub{font-family:'Cormorant Garamond',serif;font-size:.95rem;color:var(--muted);line-height:1.5}
+@media(max-width:900px){.cert-grid{grid-template-columns:1fr}.lp-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="index.html">MK.</a>
+  <ul class="nav-links">
+    <li><a href="work.html">Work</a></li><li><a href="about.html">About</a></li>
+    <li><a href="certifications.html" class="active">Certifications</a></li><li><a href="id-frameworks.html">ID Cheat Sheet</a></li>
+    <li><a href="articles.html">Articles</a></li><li><a href="spot-the-bug.html">Spot the Bug ↗</a></li>
+    <li><a href="id-model-selector.html">ID Model Selector ↗</a></li><li><a href="lms-demo.html">LMS Demo ↗</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta">Let's Talk</a>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-grid"></div><div class="page-hero-glow"></div>
+  <div class="eyebrow fade-up">Certifications</div>
+  <h1 class="page-title fade-up">Credentials that prove<br><em>the craft.</em></h1>
+  <p class="page-subtitle fade-up">Formal qualifications, platform certifications, and specialist training that back the practical experience shown in the portfolio.</p>
+</div>
+
+<section class="inner">
+  <div class="eyebrow fade-up">Formal Qualifications</div>
+  <h2 class="section-title fade-up">Earned, not <em>assumed.</em></h2>
+  <div class="cert-grid">
+    <div class="cert-card fade-up">
+      <span class="cert-icon">🎓</span>
+      <div class="cert-issuer">Cathy Moore · Udemy</div>
+      <div class="cert-name">Instructional Design: Action Mapping</div>
+      <p class="cert-desc">Mastered Cathy Moore's action mapping methodology — the gold standard for designing training that changes behaviour, not just transfers knowledge.</p>
+      <span class="badge badge-gold">Instructional Design</span>
+      <div class="cert-year">Completed</div>
+    </div>
+    <div class="cert-card fade-up">
+      <span class="cert-icon">🏅</span>
+      <div class="cert-issuer">Middle Earth HR</div>
+      <div class="cert-name">Instructional Design Certification</div>
+      <p class="cert-desc">Comprehensive instructional design certification covering needs analysis, learning objectives, assessment design, and content architecture across modalities.</p>
+      <span class="badge badge-gold">Instructional Design</span>
+      <div class="cert-year">Completed</div>
+    </div>
+    <div class="cert-card fade-up">
+      <span class="cert-icon">🧠</span>
+      <div class="cert-issuer">NovaED</div>
+      <div class="cert-name">Learning Experience Design</div>
+      <p class="cert-desc">Learning Experience Design focusing on learner-centred design, journey mapping, feedback loops, and creating experiences that persist beyond course completion.</p>
+      <span class="badge badge-blue">LX Design</span>
+      <div class="cert-year">Completed</div>
+    </div>
+    <div class="cert-card fade-up">
+      <span class="cert-icon">⚡</span>
+      <div class="cert-issuer">CommLab India</div>
+      <div class="cert-name">Storyline Master</div>
+      <p class="cert-desc">Advanced Articulate Storyline 360 certification — covering triggers, variables, JavaScript integration, branching architecture, and performance optimisation.</p>
+      <span class="badge badge-gold">Storyline 360</span>
+      <div class="cert-year">Completed</div>
+    </div>
+    <div class="cert-card fade-up">
+      <span class="cert-icon">📱</span>
+      <div class="cert-issuer">ZapWorks</div>
+      <div class="cert-name">AR/VR Development</div>
+      <p class="cert-desc">Augmented and virtual reality content development using ZapWorks platform — building immersive, marker-based AR experiences for mobile and tablet learners.</p>
+      <span class="badge badge-blue">AR/VR</span>
+      <div class="cert-year">Completed</div>
+    </div>
+    <div class="cert-card fade-up">
+      <span class="cert-icon">🌐</span>
+      <div class="cert-issuer">W3C / IAAP</div>
+      <div class="cert-name">Web Accessibility (WCAG / ADA / Section 508)</div>
+      <p class="cert-desc">Accessibility standards training covering WCAG 2.1, ADA compliance, and Section 508 — applied directly to eLearning course design and Storyline development.</p>
+      <span class="badge badge-blue">Accessibility</span>
+      <div class="cert-year">Completed</div>
+    </div>
+  </div>
+
+  <div class="learning-path fade-up">
+    <div class="eyebrow">Learning Path</div>
+    <h2 class="section-title">The disciplines that<br><em>built this practice.</em></h2>
+    <div class="lp-grid">
+      <div class="lp-item"><div class="lp-num">01</div><div><div class="lp-title">Instructional Theory</div><div class="lp-sub">ADDIE, SAM, Bloom's Taxonomy, Gagné's 9 Events, Merrill's First Principles — theory applied as structural design decisions, not labels.</div></div></div>
+      <div class="lp-item"><div class="lp-num">02</div><div><div class="lp-title">Technical Development</div><div class="lp-sub">Storyline 360 advanced development, JavaScript integration, SCORM/xAPI packaging, HTML5/CSS custom interactions.</div></div></div>
+      <div class="lp-item"><div class="lp-num">03</div><div><div class="lp-title">Accessibility & Standards</div><div class="lp-sub">WCAG 2.1, ADA compliance, Section 508 — built in from day one, not retrofitted at the end of the project.</div></div></div>
+      <div class="lp-item"><div class="lp-num">04</div><div><div class="lp-title">Emerging Technology</div><div class="lp-sub">AR/VR with ZapWorks, 3D modelling in Blender, AI-assisted content workflows, Power Automate for L&D operations.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <h2 class="cta-band-title">Want to see the credentials<br><em>in action?</em></h2>
+  <a href="work.html" class="btn-dark">See My Work →</a>
+</div>
+<footer>
+  <div class="footer-logo">Madhu Kumar Sikilammetla · Instructional Designer & eLearning Developer · 2024</div>
+  <ul class="footer-links"><li><a href="https://www.linkedin.com/in/madhu-kumar-sikilammetla-22694598" target="_blank">LinkedIn</a></li><li><a href="work.html">Work</a></li><li><a href="contact.html">Contact</a></li></ul>
+</footer>
+<script src="main.js"></script>
+</body>
+</html>

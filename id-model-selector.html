@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ID Model Selector | Madhu Kumar Sikilammetla</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.selector-wrap{max-width:860px;margin:0 auto;padding:5rem 3rem}
+.q-card{background:var(--bg2);border:1px solid var(--border);padding:3rem;margin-bottom:1.5rem;display:none}
+.q-card.active{display:block;animation:slideIn .4s ease}
+@keyframes slideIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.q-label{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem}
+.q-text{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:var(--white);line-height:1.3;margin-bottom:2rem}
+.q-options{display:flex;flex-direction:column;gap:.75rem}
+.q-opt{background:var(--bg3);border:1px solid var(--border);padding:1.1rem 1.5rem;cursor:pointer;display:flex;align-items:flex-start;gap:1rem;transition:all .2s;text-align:left}
+.q-opt:hover{border-color:var(--accent);background:var(--surface)}
+.q-opt-key{font-family:'DM Mono',monospace;font-size:.7rem;letter-spacing:.1em;color:var(--accent);flex-shrink:0;margin-top:.15rem}
+.q-opt-text{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:var(--text);line-height:1.45}
+.progress-bar{height:3px;background:var(--border);margin-bottom:2.5rem}
+.progress-fill{height:100%;background:var(--accent);transition:width .4s ease}
+.progress-label{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.1em;color:var(--muted);margin-bottom:.75rem}
+.result-card{display:none;background:var(--bg2);border:1px solid var(--border);padding:3.5rem;animation:slideIn .5s ease}
+.result-card.visible{display:block}
+.result-model{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,8vw,6rem);font-weight:300;color:var(--accent);line-height:.9;margin-bottom:.5rem}
+.result-full{font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:2rem}
+.result-why{font-family:'Cormorant Garamond',serif;font-size:1.15rem;line-height:1.8;color:rgba(232,228,220,.75);margin-bottom:2rem}
+.result-steps{display:flex;flex-direction:column;gap:0;border:1px solid var(--border)}
+.result-step{padding:1.25rem 1.5rem;border-bottom:1px solid var(--border);display:flex;gap:1rem;align-items:start}
+.result-step:last-child{border-bottom:none}
+.rs-num{font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:.1em;color:var(--accent);flex-shrink:0;margin-top:.15rem}
+.rs-text{font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--text);line-height:1.55}
+.alt-models{margin-top:2.5rem}
+.alt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:1rem}
+.alt-card{background:var(--bg2);padding:1.5rem}
+.alt-name{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:.4rem}
+.alt-reason{font-family:'Cormorant Garamond',serif;font-size:.9rem;color:var(--muted);line-height:1.5}
+.back-btn{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);background:none;border:1px solid var(--border);padding:.5rem 1rem;cursor:pointer;transition:all .2s;margin-bottom:1.5rem}
+.back-btn:hover{color:var(--accent);border-color:var(--accent)}
+@media(max-width:700px){.alt-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="index.html">MK.</a>
+  <ul class="nav-links">
+    <li><a href="work.html">Work</a></li><li><a href="about.html">About</a></li>
+    <li><a href="certifications.html">Certifications</a></li><li><a href="id-frameworks.html">ID Cheat Sheet</a></li>
+    <li><a href="articles.html">Articles</a></li><li><a href="spot-the-bug.html">Spot the Bug ↗</a></li>
+    <li><a href="id-model-selector.html" class="active">ID Model Selector ↗</a></li><li><a href="lms-demo.html">LMS Demo ↗</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta">Let's Talk</a>
+</nav>
+
+<div class="selector-wrap">
+  <div style="text-align:center;margin-bottom:3.5rem">
+    <div class="eyebrow" style="justify-content:center">Interactive Tool</div>
+    <h1 class="page-title" style="font-size:clamp(2.5rem,6vw,5rem);text-align:center">ID Model <em>Selector</em></h1>
+    <p style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:var(--muted);max-width:520px;margin:1rem auto 0">Answer 5 questions about your project. Get a recommended ID framework with a rationale — and see why the alternatives don't fit as well.</p>
+  </div>
+
+  <div id="quiz-section">
+    <div class="progress-label" id="progress-label">Question 1 of 5</div>
+    <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width:20%"></div></div>
+
+    <!-- Q1 -->
+    <div class="q-card active" id="q1">
+      <div class="q-label">Question 1 of 5</div>
+      <div class="q-text">What is the primary goal of this training?</div>
+      <div class="q-options">
+        <div class="q-opt" onclick="answer(1,'behaviour')"><div class="q-opt-key">A</div><div class="q-opt-text">Change what people do on the job — behaviour and performance outcomes</div></div>
+        <div class="q-opt" onclick="answer(1,'knowledge')"><div class="q-opt-key">B</div><div class="q-opt-text">Transfer knowledge or build conceptual understanding</div></div>
+        <div class="q-opt" onclick="answer(1,'compliance')"><div class="q-opt-key">C</div><div class="q-opt-text">Meet a compliance or regulatory requirement — documentation matters</div></div>
+        <div class="q-opt" onclick="answer(1,'skill')"><div class="q-opt-key">D</div><div class="q-opt-text">Build a specific procedural or technical skill</div></div>
+      </div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="q-card" id="q2">
+      <div class="q-label">Question 2 of 5</div>
+      <div class="q-text">How well-defined are the requirements at the start of this project?</div>
+      <div class="q-options">
+        <div class="q-opt" onclick="answer(2,'defined')"><div class="q-opt-key">A</div><div class="q-opt-text">Very well-defined — scope, audience, and content are all clearly documented</div></div>
+        <div class="q-opt" onclick="answer(2,'evolving')"><div class="q-opt-key">B</div><div class="q-opt-text">Evolving — requirements will change as stakeholders see the work</div></div>
+        <div class="q-opt" onclick="answer(2,'unclear')"><div class="q-opt-key">C</div><div class="q-opt-text">Unclear — we need to discover the real problem through the process</div></div>
+      </div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="q-card" id="q3">
+      <div class="q-label">Question 3 of 5</div>
+      <div class="q-text">What is the timeline pressure on this project?</div>
+      <div class="q-options">
+        <div class="q-opt" onclick="answer(3,'long')"><div class="q-opt-key">A</div><div class="q-opt-text">Plenty of time — we can follow a thorough, phased process</div></div>
+        <div class="q-opt" onclick="answer(3,'moderate')"><div class="q-opt-key">B</div><div class="q-opt-text">Moderate — reasonable time with clear milestones</div></div>
+        <div class="q-opt" onclick="answer(3,'tight')"><div class="q-opt-key">C</div><div class="q-opt-text">Tight — we need to move fast and iterate</div></div>
+      </div>
+    </div>
+
+    <!-- Q4 -->
+    <div class="q-card" id="q4">
+      <div class="q-label">Question 4 of 5</div>
+      <div class="q-text">How will success be measured after deployment?</div>
+      <div class="q-options">
+        <div class="q-opt" onclick="answer(4,'roi')"><div class="q-opt-key">A</div><div class="q-opt-text">Business metrics — reduced errors, increased sales, fewer incidents</div></div>
+        <div class="q-opt" onclick="answer(4,'behaviour')"><div class="q-opt-key">B</div><div class="q-opt-text">On-the-job behaviour change — managers will observe what people do differently</div></div>
+        <div class="q-opt" onclick="answer(4,'test')"><div class="q-opt-key">C</div><div class="q-opt-text">Assessment scores — learners will pass a test or knowledge check</div></div>
+        <div class="q-opt" onclick="answer(4,'completion')"><div class="q-opt-key">D</div><div class="q-opt-text">Completion rate — the organisation needs to prove training happened</div></div>
+      </div>
+    </div>
+
+    <!-- Q5 -->
+    <div class="q-card" id="q5">
+      <div class="q-label">Question 5 of 5</div>
+      <div class="q-text">Who is the primary audience for this training?</div>
+      <div class="q-options">
+        <div class="q-opt" onclick="answer(5,'novice')"><div class="q-opt-key">A</div><div class="q-opt-text">Novices or new hires with little prior knowledge of the subject</div></div>
+        <div class="q-opt" onclick="answer(5,'experienced')"><div class="q-opt-key">B</div><div class="q-opt-text">Experienced professionals who already have foundational knowledge</div></div>
+        <div class="q-opt" onclick="answer(5,'mixed')"><div class="q-opt-key">C</div><div class="q-opt-text">Mixed audience — varying levels of prior knowledge and experience</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESULT -->
+  <div class="result-card" id="result-card">
+    <button class="back-btn" onclick="restart()">← Start Over</button>
+    <div id="result-content"></div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">Madhu Kumar Sikilammetla · Instructional Designer & eLearning Developer · 2024</div>
+  <ul class="footer-links"><li><a href="https://www.linkedin.com/in/madhu-kumar-sikilammetla-22694598" target="_blank">LinkedIn</a></li><li><a href="id-frameworks.html">ID Cheat Sheet</a></li><li><a href="contact.html">Contact</a></li></ul>
+</footer>
+
+<script src="main.js"></script>
+<script>
+const answers={};
+const models={
+  action_mapping:{
+    name:'Action Mapping',full:'Cathy Moore\'s Action Mapping',
+    why:'Your answers point to a performance gap where what people do on the job needs to change. Action Mapping is the right framework here — it forces you to start with the business goal and map backwards to the actions learners need to take, then designs practice activities for each action. It ruthlessly cuts information that doesn\'t support a specific action. The result is a leaner, more effective course.',
+    steps:['Define the measurable business goal — not "train staff" but "reduce compliance errors by 30%"','Map the job actions that drive that goal — what do people need to DO differently?','Design a realistic practice scenario for each action','Add only the information learners need to complete the scenarios','Cut everything else'],
+    alts:[{name:'ADDIE',r:'ADDIE is better when requirements are fully defined and documentation is critical'},{name:'Kirkpatrick',r:'Use Kirkpatrick to measure the results of your Action Mapping design'},{name:'SAM',r:'SAM if you also need speed and iterative prototyping'}]
+  },
+  addie:{
+    name:'ADDIE',full:'Analysis · Design · Development · Implementation · Evaluation',
+    why:'Your project profile — clear requirements, adequate timeline, and a need for documented process — is the textbook use case for ADDIE. The five phases give you a structured framework with clear handoff points, which matters when working with multiple stakeholders, SMEs, and reviewers. The documentation trail ADDIE produces also supports compliance and audit requirements.',
+    steps:['Analysis: Define the performance gap, audience, and constraints','Design: Write learning objectives using Bloom\'s verbs, plan assessment strategy, sequence content','Development: Build content, interactions, media — iterate with SME reviews','Implementation: Deploy to LMS, communicate to learners, train facilitators','Evaluation: Measure against learning objectives using Kirkpatrick\'s framework'],
+    alts:[{name:'SAM',r:'If requirements evolve during development, shift to SAM\'s iterative cycles'},{name:'Bloom\'s Taxonomy',r:'Use Bloom\'s inside ADDIE to write precise learning objectives'},{name:'Kirkpatrick',r:'Use Kirkpatrick at the Evaluation phase to measure business impact'}]
+  },
+  sam:{
+    name:'SAM',full:'Successive Approximation Model — Michael Allen',
+    why:'Your project has evolving requirements and time pressure — exactly the conditions where ADDIE breaks down and SAM thrives. Rather than completing one phase before starting the next, SAM uses rapid prototyping to get stakeholder feedback early and often. Failures happen in the prototype stage (cheap) rather than the finished course (expensive). The iterative approach also means the course improves continuously rather than being locked at sign-off.',
+    steps:['Preparation: Gather just enough information to prototype — don\'t over-specify','Rapid Prototype: Build a rough, clickable version quickly','Review: Get stakeholder feedback on the prototype — not a document','Iterate: Design, develop, review in overlapping cycles','Gold Master: Finalise when the prototype meets the objective'],
+    alts:[{name:'ADDIE',r:'Use ADDIE if requirements stabilise and stakeholders need a formal process'},{name:'Action Mapping',r:'Combine with Action Mapping to ensure the prototype focuses on behaviour change'},{name:'Agile ID',r:'Pure agile sprint methodology if your team already works in agile'}]
+  },
+  gagne:{
+    name:'Gagné',full:'Gagné\'s Nine Events of Instruction',
+    why:'Your profile — building a specific procedural or technical skill for an audience with variable prior knowledge — maps well to Gagné\'s Nine Events. The framework gives you a lesson-level checklist ensuring that every cognitive step in the learning process is addressed: attention, orientation, prior activation, instruction, guidance, practice, feedback, assessment, and retention. Nothing gets skipped because it\'s inconvenient.',
+    steps:['Gain Attention: Open with something that makes the learner care','State the Objective: Tell them exactly what they\'ll be able to do','Activate Prior Learning: Connect new content to what they already know','Present Content: Deliver new knowledge, chunked and sequenced','Provide Guidance: Worked examples, demonstrations, analogies','Elicit Performance: Practice — the learner applies the skill','Provide Feedback: Immediate, specific, corrective feedback','Assess: Can they do this independently?','Enhance Retention: Spaced practice, job aids, transfer activities'],
+    alts:[{name:'Merrill',r:'For complex problem-solving where scenario-first is better than event-sequence'},{name:'Bloom\'s Taxonomy',r:'Use Bloom\'s to set the cognitive level of each event'},{name:'ADDIE',r:'Use ADDIE as the project management framework around Gagné lesson design'}]
+  },
+  kirkpatrick:{
+    name:'Kirkpatrick',full:'Kirkpatrick\'s Four Levels of Training Evaluation',
+    why:'Your project is being evaluated against business metrics and ROI — that\'s a clear signal to design with Kirkpatrick\'s framework from the start, not apply it at the end. The critical insight: design evaluation from Level 4 backwards. Define the business result first (Level 4), then the behaviours that drive it (Level 3), then the learning that enables those behaviours (Level 2), then how you\'ll measure learner reaction (Level 1). Most organisations only measure Level 1. Yours needs to go further.',
+    steps:['Level 4: Define the target business result — what metric moves?','Level 3: Identify the on-the-job behaviours that drive that result','Level 2: Design learning that produces those behaviours — and assessments that prove it','Level 1: Design for positive, credible learner experience','Measure all four levels post-deployment and report to stakeholders'],
+    alts:[{name:'Action Mapping',r:'Action Mapping is the design methodology; Kirkpatrick is the evaluation methodology — use both'},{name:'ADDIE',r:'Use ADDIE for the development process; Kirkpatrick for the evaluation phase'},{name:'Merrill',r:'Use Merrill\'s principles to ensure the course design supports Level 3 transfer'}]
+  },
+  merrill:{
+    name:'Merrill',full:'Merrill\'s First Principles of Instruction',
+    why:'Your experienced audience — professionals who already have foundational knowledge — will disengage from courses that re-teach what they know. Merrill\'s framework starts with a real-world problem (not an information presentation), which respects their experience and immediately demonstrates relevance. The problem-centred approach makes content feel necessary rather than imposed.',
+    steps:['Problem First: Open with a real-world problem, not an overview slide','Activation: Connect to relevant prior experience — what do they already know?','Demonstration: Show the skill or knowledge being applied in context','Application: Practise in a realistic, problem-centred exercise','Integration: Connect to their actual work context — how will they use this tomorrow?'],
+    alts:[{name:'Gagné',r:'For more structured, sequential skill-building with novice audiences'},{name:'Action Mapping',r:'For focusing even more tightly on specific on-the-job actions'},{name:'SAM',r:'If content or context is still being discovered iteratively'}]
+  }
+};
+
+function score_model(){
+  const a=answers;
+  if(a[1]==='behaviour'||a[4]==='behaviour') return 'action_mapping';
+  if(a[3]==='tight'||a[2]==='evolving') return 'sam';
+  if(a[4]==='roi'||a[4]==='completion') return 'kirkpatrick';
+  if(a[1]==='skill'||a[5]==='novice') return 'gagne';
+  if(a[5]==='experienced') return 'merrill';
+  return 'addie';
+}
+
+function answer(q,val){
+  answers[q]=val;
+  document.getElementById('q'+q).classList.remove('active');
+  if(q<5){
+    document.getElementById('q'+(q+1)).classList.add('active');
+    document.getElementById('progress-label').textContent='Question '+(q+1)+' of 5';
+    document.getElementById('progress-fill').style.width=((q+1)/5*100)+'%';
+  } else {
+    showResult();
+  }
+}
+
+function showResult(){
+  document.getElementById('quiz-section').style.display='none';
+  const rc=document.getElementById('result-card');
+  const m=models[score_model()];
+  document.getElementById('result-content').innerHTML=`
+    <div class="eyebrow">Your Recommended Framework</div>
+    <div class="result-model">${m.name}</div>
+    <div class="result-full">${m.full}</div>
+    <p class="result-why">${m.why}</p>
+    <div class="eyebrow" style="margin-top:2.5rem">How to Apply It</div>
+    <div class="result-steps">${m.steps.map((s,i)=>`<div class="result-step"><div class="rs-num">0${i+1}</div><div class="rs-text">${s}</div></div>`).join('')}</div>
+    <div class="alt-models">
+      <div class="eyebrow">Why Not the Others?</div>
+      <div class="alt-grid">${m.alts.map(a=>`<div class="alt-card"><div class="alt-name">${a.name}</div><div class="alt-reason">${a.r}</div></div>`).join('')}</div>
+    </div>
+    <div style="margin-top:2.5rem;display:flex;gap:1rem;flex-wrap:wrap">
+      <a href="id-frameworks.html" class="btn-primary">Read the Full Cheat Sheet →</a>
+      <a href="work.html" class="btn-ghost">See It Applied in Real Projects</a>
+    </div>`;
+  rc.classList.add('visible');
+}
+
+function restart(){
+  Object.keys(answers).forEach(k=>delete answers[k]);
+  document.getElementById('quiz-section').style.display='block';
+  document.getElementById('result-card').classList.remove('visible');
+  document.querySelectorAll('.q-card').forEach(c=>c.classList.remove('active'));
+  document.getElementById('q1').classList.add('active');
+  document.getElementById('progress-label').textContent='Question 1 of 5';
+  document.getElementById('progress-fill').style.width='20%';
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>About | Madhu Kumar Sikilammetla</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start;padding:5rem 3rem}
+.profile-box{position:sticky;top:6rem}
+.avatar-circle{width:120px;height:120px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:3rem;color:var(--bg);margin-bottom:2rem}
+.profile-name{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:300;color:var(--white);line-height:1.1;margin-bottom:.5rem}
+.profile-title{font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem}
+.profile-meta{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.08em;color:var(--muted);margin-bottom:2rem}
+.profile-links{display:flex;gap:.75rem;flex-wrap:wrap}
+.profile-links a{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border:1px solid var(--border);padding:.4rem .9rem;text-decoration:none;transition:all .2s}
+.profile-links a:hover{color:var(--accent);border-color:var(--accent)}
+.about-content h3{font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);margin-bottom:1.25rem;margin-top:3rem;padding-bottom:.5rem;border-bottom:1px solid var(--border)}
+.about-content h3:first-child{margin-top:0}
+.about-content p{font-family:'Cormorant Garamond',serif;font-size:1.15rem;line-height:1.8;color:rgba(232,228,220,.75);margin-bottom:1.25rem}
+.skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);margin-top:1rem}
+.skill-group{background:var(--bg2);padding:1.5rem}
+.skill-group-title{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem}
+.skill-list{list-style:none;display:flex;flex-direction:column;gap:.5rem}
+.skill-list li{font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--text);display:flex;align-items:center;gap:.6rem}
+.skill-list li::before{content:'◆';color:var(--accent);font-size:.45rem;flex-shrink:0}
+.exp-items{display:flex;flex-direction:column;gap:0}
+.exp-item{padding:2rem 0;border-bottom:1px solid var(--border)}
+.exp-period{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.1em;color:var(--accent);margin-bottom:.3rem}
+.exp-role{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:400;color:var(--white);margin-bottom:.2rem}
+.exp-company{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.08em;color:var(--muted)}
+.quals{display:flex;flex-direction:column;gap:.75rem;margin-top:1rem}
+.qual-item{display:flex;align-items:flex-start;gap:1rem;padding:1.25rem;background:var(--surface);border-left:2px solid var(--accent)}
+.qual-icon{font-size:1.2rem;flex-shrink:0}
+.qual-name{font-family:'Syne',sans-serif;font-size:.9rem;font-weight:600;color:var(--white);margin-bottom:.15rem}
+.qual-issuer{font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.08em;color:var(--muted)}
+.tools-scroll{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem}
+.tool-chip{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(212,168,83,.3);padding:.3rem .75rem;background:rgba(212,168,83,.05)}
+@media(max-width:900px){.about-grid{grid-template-columns:1fr;padding:3rem 1.5rem;gap:3rem}.profile-box{position:static}.skills-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="index.html">MK.</a>
+  <ul class="nav-links">
+    <li><a href="work.html">Work</a></li><li><a href="about.html" class="active">About</a></li>
+    <li><a href="certifications.html">Certifications</a></li><li><a href="id-frameworks.html">ID Cheat Sheet</a></li>
+    <li><a href="articles.html">Articles</a></li><li><a href="spot-the-bug.html">Spot the Bug ↗</a></li>
+    <li><a href="id-model-selector.html">ID Model Selector ↗</a></li><li><a href="lms-demo.html">LMS Demo ↗</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta">Let's Talk</a>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-grid"></div><div class="page-hero-glow"></div>
+  <div class="eyebrow fade-up">About</div>
+  <h1 class="page-title fade-up">The practitioner who<br><em>learned to build.</em></h1>
+  <p class="page-subtitle fade-up">Instructional designer turned eLearning engineer. 7+ years across Healthcare, Banking, Retail, Education and Manufacturing — designing learning that performs, not just completes.</p>
+</div>
+
+<div class="about-grid">
+  <div class="profile-box fade-up">
+    <div class="avatar-circle">MK</div>
+    <div class="profile-name">Madhu Kumar<br>Sikilammetla</div>
+    <div class="profile-title">Instructional Designer & eLearning Developer</div>
+    <div class="profile-meta">📍 India &nbsp;·&nbsp; <span class="dot-green"></span> Available for new opportunities</div>
+    <div class="profile-links">
+      <a href="https://www.linkedin.com/in/madhu-kumar-sikilammetla-22694598" target="_blank">LinkedIn</a>
+      <a href="mailto:madhukumar5290@gmail.com">Email</a>
+      <a href="https://wa.me/918688228517" target="_blank">WhatsApp</a>
+      <a href="https://join.skype.com/invite/azlPdkwXWSUL" target="_blank">Skype</a>
+      <a href="https://drive.google.com/file/d/1wsBtUEBdSjdLwK7CxFID6ttaW6afTxf6/view" target="_blank">Download CV</a>
+    </div>
+  </div>
+
+  <div class="about-content">
+    <h3>My Story</h3>
+    <p>I'm an Instructional Designer and eLearning Developer with over 7 years of experience creating SCORM-compliant, ADA-accessible learning experiences across Healthcare, Retail, Banking, Education, Manufacturing, and more.</p>
+    <p>My work spans the full development lifecycle — from needs analysis and storyboarding through to custom JavaScript interactions, AR/VR development with ZapWorks, 3D with Blender, animated video with Vyond, and multi-language localisation across 16–22 languages.</p>
+    <p>I've conducted training sessions for current and aspiring eLearning developers — sharing best practices, tools, and field-tested insights. I don't just build courses. I build the capability of teams around me.</p>
+
+    <h3>Work Experience</h3>
+    <div class="exp-items">
+      <div class="exp-item"><div class="exp-period">Oct 2023 – Present · 1+ years</div><div class="exp-role">Senior Learning Developer</div><div class="exp-company">Current Role</div></div>
+      <div class="exp-item"><div class="exp-period">Sep 2021 – Oct 2023 · 2 years</div><div class="exp-role">Digital Learning Experience Developer</div><div class="exp-company">Previous Role</div></div>
+      <div class="exp-item"><div class="exp-period">2020 – Present · 5+ years</div><div class="exp-role">Freelance Instructional Designer & eLearning Developer</div><div class="exp-company">Independent</div></div>
+      <div class="exp-item"><div class="exp-period">Sep 2018 – Sep 2021 · 3 years</div><div class="exp-role">eLearning Developer</div><div class="exp-company">CommLab India LLP</div></div>
+    </div>
+
+    <h3>Qualifications</h3>
+    <div class="quals">
+      <div class="qual-item"><div class="qual-icon">🎓</div><div><div class="qual-name">Instructional Design</div><div class="qual-issuer">Cathy Moore · Udemy</div></div></div>
+      <div class="qual-item"><div class="qual-icon">🎓</div><div><div class="qual-name">Instructional Design</div><div class="qual-issuer">Middle Earth HR</div></div></div>
+      <div class="qual-item"><div class="qual-icon">🎓</div><div><div class="qual-name">Learning Experience Design</div><div class="qual-issuer">NovaED</div></div></div>
+      <div class="qual-item"><div class="qual-icon">🏆</div><div><div class="qual-name">Storyline Master</div><div class="qual-issuer">CommLab India</div></div></div>
+    </div>
+
+    <h3>Skills</h3>
+    <div class="skills-grid">
+      <div class="skill-group"><div class="skill-group-title">Authoring Tools</div><ul class="skill-list"><li>Articulate Storyline 360</li><li>Rise 360</li><li>Lectora</li><li>Adobe Captivate</li><li>iSpring</li><li>DominKnow</li><li>Elucidat</li></ul></div>
+      <div class="skill-group"><div class="skill-group-title">Media & Creative</div><ul class="skill-list"><li>Adobe Photoshop / Illustrator</li><li>Premiere Pro / After Effects</li><li>Vyond</li><li>Camtasia</li><li>Wideo</li><li>Audacity</li><li>Blender 3D</li></ul></div>
+      <div class="skill-group"><div class="skill-group-title">Emerging Tech</div><ul class="skill-list"><li>ZapWorks AR/VR</li><li>SCORM · xAPI</li><li>JavaScript · HTML · CSS</li><li>Power Automate</li></ul></div>
+      <div class="skill-group"><div class="skill-group-title">LMS Platforms</div><ul class="skill-list"><li>Mindtickle LMS</li><li>Docebo LMS</li><li>SCORM Cloud</li><li>LMS Admin</li></ul></div>
+    </div>
+
+    <h3>Tools I Use Daily</h3>
+    <div class="tools-scroll">
+      <span class="tool-chip">Storyline 360</span><span class="tool-chip">Rise 360</span><span class="tool-chip">Lectora</span><span class="tool-chip">Captivate</span><span class="tool-chip">iSpring</span><span class="tool-chip">DominKnow</span><span class="tool-chip">Elucidat</span><span class="tool-chip">Photoshop</span><span class="tool-chip">Illustrator</span><span class="tool-chip">Premiere Pro</span><span class="tool-chip">After Effects</span><span class="tool-chip">Vyond</span><span class="tool-chip">Camtasia</span><span class="tool-chip">Audacity</span><span class="tool-chip">ZapWorks</span><span class="tool-chip">Blender 3D</span><span class="tool-chip">JavaScript</span><span class="tool-chip">HTML/CSS</span><span class="tool-chip">Power Automate</span><span class="tool-chip">Mindtickle</span><span class="tool-chip">Docebo</span><span class="tool-chip">SCORM Cloud</span><span class="tool-chip">xAPI</span>
+    </div>
+  </div>
+</div>
+
+<div class="cta-band">
+  <div class="eyebrow" style="justify-content:center">Let's build something</div>
+  <h2 class="cta-band-title">Got a project that needs<br><em>design thinking and engineering?</em></h2>
+  <a href="contact.html" class="btn-dark">Get in Touch →</a>
+  <a href="work.html" class="btn-dark" style="background:transparent;color:var(--bg);border:2px solid var(--bg)">See My Work</a>
+</div>
+<footer>
+  <div class="footer-logo">Madhu Kumar Sikilammetla · Instructional Designer & eLearning Developer · 2024</div>
+  <ul class="footer-links"><li><a href="https://www.linkedin.com/in/madhu-kumar-sikilammetla-22694598" target="_blank">LinkedIn</a></li><li><a href="work.html">Work</a></li><li><a href="contact.html">Contact</a></li></ul>
+</footer>
+<script src="main.js"></script>
+</body>
+</html>

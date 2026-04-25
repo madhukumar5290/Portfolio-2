@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Work & Case Studies | Madhu Kumar Sikilammetla</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.filter-bar{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:3rem}
+.filter-btn{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border:1px solid var(--border);padding:.4rem 1rem;cursor:pointer;background:transparent;transition:all .2s}
+.filter-btn:hover,.filter-btn.active{color:var(--accent);border-color:var(--accent)}
+.project-card{background:var(--bg2);border-bottom:1px solid var(--border);padding:3rem;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:start;transition:background .3s;text-decoration:none;color:inherit}
+.project-card:hover{background:var(--bg3)}
+.project-num{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.15em;color:var(--muted);margin-bottom:.5rem}
+.project-type{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:.6rem}
+.project-title{font-family:'Cormorant Garamond',serif;font-size:1.75rem;font-weight:400;color:var(--white);line-height:1.2;margin-bottom:.75rem}
+.project-desc{font-family:'Cormorant Garamond',serif;font-size:1rem;line-height:1.65;color:rgba(232,228,220,.6);margin-bottom:1rem;max-width:600px}
+.project-tags{display:flex;flex-wrap:wrap;gap:.4rem}
+.project-arrow{font-family:'DM Mono',monospace;font-size:1.5rem;color:var(--border);transition:color .3s;align-self:center}
+.project-card:hover .project-arrow{color:var(--accent)}
+.case-study{padding:5rem 3rem;border-bottom:1px solid var(--border)}
+.cs-header{display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-bottom:4rem;align-items:start}
+.cs-num{font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:.15em;color:var(--accent);margin-bottom:.5rem}
+.cs-cat{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem}
+.cs-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.5rem);font-weight:300;line-height:1.1;color:var(--white)}
+.cs-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1.25rem}
+.cs-body h4{font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:.75rem;margin-top:2rem}
+.cs-body h4:first-child{margin-top:0}
+.cs-body p{font-family:'Cormorant Garamond',serif;font-size:1.1rem;line-height:1.75;color:rgba(232,228,220,.7);margin-bottom:1rem}
+.cs-highlight{background:var(--surface);border-left:3px solid var(--accent);padding:1.5rem 2rem;margin:2rem 0}
+.cs-highlight p{color:var(--white);margin-bottom:0}
+@media(max-width:900px){
+  .project-card{grid-template-columns:1fr}
+  .project-arrow{display:none}
+  .cs-header{grid-template-columns:1fr}
+  .case-study{padding:3rem 1.5rem}
+}
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="index.html">MK.</a>
+  <ul class="nav-links">
+    <li><a href="work.html" class="active">Work</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="certifications.html">Certifications</a></li>
+    <li><a href="id-frameworks.html">ID Cheat Sheet</a></li>
+    <li><a href="articles.html">Articles</a></li>
+    <li><a href="spot-the-bug.html">Spot the Bug ↗</a></li>
+    <li><a href="id-model-selector.html">ID Model Selector ↗</a></li>
+    <li><a href="lms-demo.html">LMS Demo ↗</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta">Let's Talk</a>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-grid"></div>
+  <div class="page-hero-glow"></div>
+  <div class="eyebrow fade-up">Work & Case Studies</div>
+  <h1 class="page-title fade-up">Projects that show<br><em>how I think.</em></h1>
+  <p class="page-subtitle fade-up">20+ real eLearning projects across compliance, K12, healthcare, banking, and interactive game-based learning. Each one built to perform — not just to look good.</p>
+</div>
+
+<!-- CASE STUDIES -->
+<div class="case-study fade-up" id="case1">
+  <div class="cs-header">
+    <div>
+      <div class="cs-num">Case Study 01</div>
+      <div class="cs-cat">Compliance · Banking · Interactive Scenarios</div>
+      <h2 class="cs-title">Anti-Money Laundering</h2>
+      <div class="cs-tags"><span class="tag">Storyline 360</span><span class="tag">Branching Scenarios</span><span class="tag">SCORM</span><span class="tag">Banking</span></div>
+    </div>
+    <div class="cs-body">
+      <h4>The Challenge</h4>
+      <p>Compliance training in banking is typically dry, slide-heavy, and forgotten within days. The challenge was to make AML regulations genuinely engaging — and to ensure learners could apply the knowledge to real-world detection scenarios, not just recall definitions.</p>
+      <h4>The Approach</h4>
+      <p>I designed a fully branching scenario-based course where learners take the role of a compliance officer reviewing suspicious transactions. Each decision leads to a different outcome — with immediate, contextual feedback grounded in real regulatory frameworks.</p>
+      <div class="cs-highlight"><p>"End-to-end course design: storyboard, visual design, interaction architecture, and SCORM packaging — all in-house."</p></div>
+      <a href="https://madhukumar5290.github.io/Anti-MoneyLaundering/" target="_blank" class="btn-primary" style="margin-top:1rem">Try Live Demo →</a>
+    </div>
+  </div>
+</div>
+
+<div class="case-study fade-up" id="case2">
+  <div class="cs-header">
+    <div>
+      <div class="cs-num">Case Study 02</div>
+      <div class="cs-cat">Accessibility · ADA/508 · Custom Interaction</div>
+      <h2 class="cs-title">Drag & Drop with Full Keyboard Accessibility</h2>
+      <div class="cs-tags"><span class="tag">Storyline 360</span><span class="tag">JavaScript</span><span class="tag">ADA/508</span><span class="tag">Tab Order</span></div>
+    </div>
+    <div class="cs-body">
+      <h4>The Challenge</h4>
+      <p>Most Storyline drag-and-drop interactions are completely inaccessible to keyboard users. The default behaviour ignores tab order, provides no keyboard activation, and excludes an entire segment of learners.</p>
+      <h4>The Approach</h4>
+      <p>Built a drag-and-drop interaction with custom JavaScript to enforce logical tab order, keyboard activation via Enter/Space, and visible focus indicators — all meeting WCAG 2.1 AA and Section 508 requirements. Accessibility was the architecture, not an afterthought.</p>
+      <div class="cs-highlight"><p>"Most developers add alt text at the end and call it done. I build accessibility in from the first trigger."</p></div>
+      <a href="https://madhukumar5290.github.io/DragandDropWithTabOrder/" target="_blank" class="btn-primary" style="margin-top:1rem">Try Live Demo →</a>
+    </div>
+  </div>
+</div>
+
+<div class="case-study fade-up" id="case3">
+  <div class="cs-header">
+    <div>
+      <div class="cs-num">Case Study 03</div>
+      <div class="cs-cat">Flash-to-HTML5 · Conversion · Modern Delivery</div>
+      <h2 class="cs-title">Flash-to-HTML5 Conversion: Personal SWOT</h2>
+      <div class="cs-tags"><span class="tag">HTML5</span><span class="tag">Storyline</span><span class="tag">Mobile</span><span class="tag">Legacy Conversion</span></div>
+    </div>
+    <div class="cs-body">
+      <h4>The Challenge</h4>
+      <p>With Flash reaching end-of-life, organisations faced a crisis: large course libraries built in Flash, rendering on zero modern devices. The challenge was not just conversion — it was preserving the original interaction fidelity and learning design intent.</p>
+      <h4>The Approach</h4>
+      <p>Rebuilt the Personal SWOT course in Storyline 360 with full HTML5 output — responsive layout, touch-friendly interactions, and identical learning flow to the original. Mobile and tablet-ready from day one.</p>
+      <a href="https://madhukumar5290.github.io/SWOTAnalysis/" target="_blank" class="btn-primary" style="margin-top:1rem">Try Live Demo →</a>
+    </div>
+  </div>
+</div>
+
+<!-- ALL PROJECTS GRID -->
+<section class="inner" style="padding-top:3rem">
+  <div class="eyebrow fade-up">All Projects</div>
+  <h2 class="section-title fade-up">The full <em>portfolio.</em></h2>
+  <div class="filter-bar fade-up">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="game">Games</button>
+    <button class="filter-btn" data-filter="course">Courses</button>
+    <button class="filter-btn" data-filter="k12">K12</button>
+    <button class="filter-btn" data-filter="simulation">Simulation</button>
+  </div>
+
+  <div id="project-list">
+    <a href="https://madhukumar5290.github.io/HoneyBeesandBeehives/" target="_blank" class="project-card" data-type="game"><div><div class="project-num">04</div><div class="project-type">Interactive Game · Science · Education</div><h3 class="project-title">Bees and Beehives</h3><p class="project-desc">An interactive game-based learning experience about honey bee biology and beehive structure — engaging learners through exploration and discovery.</p><div class="project-tags"><span class="tag">Game</span><span class="tag">Education</span><span class="tag">Storyline</span></div></div><div class="project-arrow">↗</div></a>
+    <a href="https://madhukumar5290.github.io/MemoryFlashCardGameDesktop/" target="_blank" class="project-card" data-type="game"><div><div class="project-num">05</div><div class="project-type">Game-Based Learning · Memory · Interaction</div><h3 class="project-title">Memory Flash Cards</h3><p class="project-desc">A memory card-matching game designed for desktop learners — reinforcing knowledge retention through spaced repetition mechanics.</p><div class="project-tags"><span class="tag">Memory Game</span><span class="tag">Desktop</span><span class="tag">Storyline</span></div></div><div class="project-arrow">↗</div></a>
+    <a href="https://madhukumar5290.github.io/NumberPuzzleGame/" target="_blank" class="project-card" data-type="game"><div><div class="project-num">06</div><div class="project-type">Puzzle Game · Cognitive · Interaction</div><h3 class="project-title">Number Puzzle Game</h3><p class="project-desc">A cognitive puzzle game challenging learners with number-sequencing tasks — combining problem-solving with learning reinforcement.</p><div class="project-tags"><span class="tag">Puzzle</span><span class="tag">Cognitive</span><span class="tag">HTML5</span></div></div><div class="project-arrow">↗</div></a>
+    <a href="https://madhukumar5290.github.io/AboutWorldVisionIndia/" target="_blank" class="project-card" data-type="course"><div><div class="project-num">07</div><div class="project-type">Organisation Induction · Non-Profit · Course</div><h3 class="project-title">About World Vision India</h3><p class="project-desc">An end-to-end organisational induction course for World Vision India — introducing mission, values, and operations through rich multimedia.</p><div class="project-tags"><span class="tag">Induction</span><span class="tag">Non-Profit</span><span class="tag">Storyline</span></div></div><div class="project-arrow">↗</div></a>
+    <a href="https://madhukumar5290.github.io/SolutionInnovationProgram/" target="_blank" class="project-card" data-type="course"><div><div class="project-num">08</div><div class="project-type">Innovation · Leadership · End-to-End Course</div><h3 class="project-title">Solution Innovation Program</h3><p class="project-desc">A leadership development course focused on solution-oriented thinking and innovation frameworks — built with layered interactivity and real-world case applications.</p><div class="project-tags"><span class="tag">Leadership</span><span class="tag">Innovation</span><span class="tag">Storyline 360</span></div></div><div class="project-arrow">↗</div></a>
+    <a href="https://madhukumar5290.github.io/BodyOrgans/" target="_blank" class="project-card" data-type="game"><div><div class="project-num">09</div><div class="project-type">Healthcare · Interactive · Anatomy</div><h3 class="project-title">Human Body Organs</h3><p class="project-desc">An interactive anatomy explorer — learners click through the body to discover organ functions in an engaging, visual format suitable for healthcare onboarding.</p><div class="project-tags"><span class="tag">Healthcare</span><span class="tag">Interactive</span><span class="tag">Storyline</span></div></div><div class="project-arrow">↗</div></a>
+    <a href="https://madhukumar5290.github.io/ConductingResearchOnACarDealershipWebsite/" target="_blank" class="project-card" data-type="simulation"><div><div class="project-num">10</div><div class="project-type">Simulation · Retail · Website Training</div><h3 class="project-title">Car Dealership Website Research Simulation</h3><p class="project-desc">A browser simulation where learners navigate a mock car dealership website — practising research and comparison skills in a realistic online environment.</p><div class="project-tags"><span class="tag">Simulation</span><span class="tag">Retail</span><span class="tag">Software Sim</span></div></div><div class="project-arrow">↗</div></a>
+    <a href="https://madhukumar5290.github.io/CodeOfConduct/" target="_blank" class="project-card" data-type="course"><div><div class="project-num">11</div><div class="project-type">Compliance · HR · Workplace Policy</div><h3 class="project-title">Code of Conduct</h3><p class="project-desc">An end-to-end Code of Conduct compliance course designed for multi-industry deployment — scenario-driven with policy-grounded feedback mechanisms.</p><div class="project-tags"><span class="tag">Compliance</span><span class="tag">HR</span><span class="tag">Storyline 360</span></div></div><div class="project-arrow">↗</div></a>
+    <a href="https://madhukumar5290.github.io/MeasuringVolumes/" target="_blank" class="project-card" data-type="k12"><div><div class="project-num">12</div><div class="project-type">K12 · Mathematics · 508-Compliant</div><h3 class="project-title">Measuring Volumes</h3><p class="project-desc">A Section 508-compliant K12 mathematics module on volume measurement — fully keyboard navigable with screen-reader support and clear visual hierarchy.</p><div class="project-tags"><span class="tag">K12</span><span class="tag">Section 508</span><span class="tag">Maths</span></div></div><div class="project-arrow">↗</div></a>
+    <a href="https://madhukumar5290.github.io/AreaOfParallelogram/" target="_blank" class="project-card" data-type="k12"><div><div class="project-num">13</div><div class="project-type">K12 · Geometry · Interactive</div><h3 class="project-title">Area of Parallelogram — K12</h3><p class="project-desc">An interactive geometry module helping K12 learners understand the area of a parallelogram through dynamic visual manipulation and worked examples.</p><div class="project-tags"><span class="tag">K12</span><span class="tag">Geometry</span><span class="tag">Interactive</span></div></div><div class="project-arrow">↗</div></a>
+    <a href="https://madhukumar5290.github.io/AreaOfParallelogramArabic/" target="_blank" class="project-card" data-type="k12"><div><div class="project-num">14</div><div class="project-type">K12 · Arabic · RTL Localisation</div><h3 class="project-title">Area of Parallelogram — Arabic</h3><p class="project-desc">The same K12 geometry module fully localised to Arabic — demonstrating right-to-left layout management, Arabic typography, and culturally adapted visual design.</p><div class="project-tags"><span class="tag">Arabic</span><span class="tag">RTL</span><span class="tag">Localisation</span></div></div><div class="project-arrow">↗</div></a>
+    <a href="https://madhukumar5290.github.io/365RhymesandStoriesOneSnowyDay/" target="_blank" class="project-card" data-type="k12"><div><div class="project-num">15</div><div class="project-type">K12 · Literacy · Storytelling</div><h3 class="project-title">One Snowy Day — K12 Story</h3><p class="project-desc">An animated K12 reading and literacy course based on a children's story — designed to build vocabulary, comprehension, and a love of reading.</p><div class="project-tags"><span class="tag">K12</span><span class="tag">Literacy</span><span class="tag">Storyline</span></div></div><div class="project-arrow">↗</div></a>
+    <a href="https://madhukumar5290.github.io/SnakeandLadderGame/" target="_blank" class="project-card" data-type="game"><div><div class="project-num">16</div><div class="project-type">Game-Based Learning · Gamification</div><h3 class="project-title">Snake and Ladder</h3><p class="project-desc">The classic game re-engineered as a learning activity — questions are woven into gameplay to create an engaging, competitive knowledge reinforcement tool.</p><div class="project-tags"><span class="tag">Gamification</span><span class="tag">Game</span><span class="tag">Storyline</span></div></div><div class="project-arrow">↗</div></a>
+    <a href="https://madhukumar5290.github.io/TriviaTime/" target="_blank" class="project-card" data-type="game"><div><div class="project-num">17</div><div class="project-type">Quiz Game · Assessment · Engagement</div><h3 class="project-title">Trivia Time</h3><p class="project-desc">A timed trivia game format adaptable to any subject matter — fast-paced, competitive, and highly effective for knowledge refresh and pre-training activation.</p><div class="project-tags"><span class="tag">Quiz</span><span class="tag">Timer</span><span class="tag">Engagement</span></div></div><div class="project-arrow">↗</div></a>
+    <a href="https://madhukumar5290.github.io/SpinWheelGame/" target="_blank" class="project-card" data-type="game"><div><div class="project-num">18</div><div class="project-type">Gamification · Random Activity · Facilitation</div><h3 class="project-title">Spin the Wheel</h3><p class="project-desc">A spin-wheel game mechanic for classroom or virtual training facilitation — randomising questions, activities, or team assignments to boost energy and participation.</p><div class="project-tags"><span class="tag">Gamification</span><span class="tag">Facilitation</span><span class="tag">HTML5</span></div></div><div class="project-arrow">↗</div></a>
+    <a href="https://madhukumar5290.github.io/MoneyGame/" target="_blank" class="project-card" data-type="game"><div><div class="project-num">19</div><div class="project-type">Financial Literacy · Game · Interactive</div><h3 class="project-title">The Money Game</h3><p class="project-desc">An interactive financial literacy game teaching learners about money, budgeting, and decision-making through scenario-based game mechanics.</p><div class="project-tags"><span class="tag">Finance</span><span class="tag">Game</span><span class="tag">Storyline</span></div></div><div class="project-arrow">↗</div></a>
+    <a href="https://madhukumar5290.github.io/MemoryFlashCardGame/" target="_blank" class="project-card" data-type="game"><div><div class="project-num">20</div><div class="project-type">Mobile · Responsive · Memory Game</div><h3 class="project-title">Memory Flash Cards — Mobile</h3><p class="project-desc">The mobile-optimised version of the flash card game — touch-friendly, portrait-first design, with the same spaced repetition mechanics for on-the-go learning.</p><div class="project-tags"><span class="tag">Mobile</span><span class="tag">Responsive</span><span class="tag">Memory</span></div></div><div class="project-arrow">↗</div></a>
+  </div>
+</section>
+
+<div class="cta-band">
+  <div class="eyebrow" style="justify-content:center">Interested in working together?</div>
+  <h2 class="cta-band-title">Got a course that needs<br><em>design thinking and engineering?</em></h2>
+  <a href="contact.html" class="btn-dark">Get in Touch →</a>
+</div>
+
+<footer>
+  <div class="footer-logo">Madhu Kumar Sikilammetla · Instructional Designer & eLearning Developer · 2024</div>
+  <ul class="footer-links">
+    <li><a href="https://www.linkedin.com/in/madhu-kumar-sikilammetla-22694598" target="_blank">LinkedIn</a></li>
+    <li><a href="work.html">Work</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li>
+  </ul>
+</footer>
+<script src="main.js"></script>
+<script>
+document.querySelectorAll('.filter-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const f=btn.dataset.filter;
+    document.querySelectorAll('.project-card').forEach(c=>{
+      c.style.display=(f==='all'||c.dataset.type===f)?'grid':'none';
+    });
+  });
+});
+</script>
+</body>
+</html>

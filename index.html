@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Madhu Kumar Sikilammetla | Instructional Designer & eLearning Developer</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:8rem 3rem 4rem;position:relative;overflow:hidden}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(212,168,83,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(212,168,83,.03) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
+.hero-glow{position:absolute;top:-20%;right:-10%;width:700px;height:700px;background:radial-gradient(circle,rgba(212,168,83,.06) 0%,transparent 70%);pointer-events:none}
+.hero-glow2{position:absolute;bottom:10%;left:-10%;width:500px;height:500px;background:radial-gradient(circle,rgba(79,209,197,.04) 0%,transparent 70%);pointer-events:none}
+.hero-label{font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:2rem;display:flex;align-items:center;gap:.75rem}
+.hero-label::before{content:'';display:inline-block;width:40px;height:1px;background:var(--accent)}
+.hero-h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3.5rem,8vw,7.5rem);font-weight:300;line-height:1.02;letter-spacing:-.02em;color:var(--white);margin-bottom:.25rem}
+.hero-h1 em{font-style:italic;color:var(--accent)}
+.hero-name{font-family:'DM Mono',monospace;font-size:.78rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:2.5rem;margin-top:.5rem}
+.hero-body{max-width:640px;font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:300;line-height:1.65;color:rgba(232,228,220,.75);margin-bottom:3rem}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:5rem}
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--border)}
+.stat{padding:1.75rem 0;border-right:1px solid var(--border)}
+.stat:last-child{border-right:none}
+.stat-n{font-family:'Cormorant Garamond',serif;font-size:3.2rem;font-weight:300;color:var(--accent);line-height:1;display:block;margin-bottom:.2rem}
+.stat-l{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+/* PILLARS */
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:3.5rem}
+.pillar{background:var(--bg);padding:2.75rem 2.25rem;transition:background .3s}
+.pillar:hover{background:var(--bg2)}
+.pillar-num{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.15em;color:var(--accent);margin-bottom:1.25rem}
+.pillar-icon{font-size:1.8rem;margin-bottom:1rem;display:block}
+.pillar-title{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--white);margin-bottom:.9rem;line-height:1.2}
+.pillar-body{font-family:'Cormorant Garamond',serif;font-size:1rem;line-height:1.7;color:rgba(232,228,220,.6);margin-bottom:1.25rem}
+.pillar-tags{display:flex;flex-wrap:wrap;gap:.4rem}
+/* WORK PREVIEW */
+.work-bg{background:var(--bg2)}
+/* RADAR */
+.radar-wrap{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.radar-legend{display:flex;flex-direction:column;gap:1.25rem;margin-top:2rem}
+.rl-item{display:flex;align-items:flex-start;gap:.9rem}
+.rl-dot{width:7px;height:7px;background:var(--accent);border-radius:50%;margin-top:.35rem;flex-shrink:0}
+.rl-title{font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--white);margin-bottom:.15rem}
+.rl-desc{font-family:'Cormorant Garamond',serif;font-size:.95rem;color:var(--muted);line-height:1.5}
+/* TESTIMONIAL */
+.testimonial-bg{background:var(--surface);padding:5rem 3rem}
+.testimonial-inner{max-width:800px;margin:0 auto;text-align:center}
+.testimonial-quote{font-family:'Cormorant Garamond',serif;font-size:clamp(1.4rem,3vw,2rem);font-weight:300;font-style:italic;line-height:1.5;color:var(--white);margin-bottom:2rem}
+.testimonial-quote::before{content:'"';font-size:4rem;color:var(--accent);line-height:0;vertical-align:-.4em;margin-right:.2rem}
+.testimonial-author{font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.testimonial-role{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.08em;color:var(--muted);margin-top:.3rem}
+@media(max-width:900px){
+  .hero{padding:7rem 1.5rem 3rem}
+  .stats-bar{grid-template-columns:repeat(2,1fr)}
+  .stat:nth-child(2){border-right:none}
+  .pillars{grid-template-columns:1fr}
+  .radar-wrap{grid-template-columns:1fr;gap:3rem}
+}
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="index.html">MK.</a>
+  <ul class="nav-links">
+    <li><a href="work.html">Work</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="certifications.html">Certifications</a></li>
+    <li><a href="id-frameworks.html">ID Cheat Sheet</a></li>
+    <li><a href="articles.html">Articles</a></li>
+    <li><a href="spot-the-bug.html">Spot the Bug ↗</a></li>
+    <li><a href="id-model-selector.html">ID Model Selector ↗</a></li>
+    <li><a href="lms-demo.html">LMS Demo ↗</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta">Let's Talk</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-glow2"></div>
+  <div class="hero-label"><span class="dot-green"></span>Available for new opportunities</div>
+  <h1 class="hero-h1">I design the course.<br>I build the interaction.<br><em>I wire it to data.</em></h1>
+  <p class="hero-name">Madhu Kumar Sikilammetla · Instructional Designer & eLearning Developer</p>
+  <p class="hero-body">7+ years designing and building SCORM/xAPI-compliant learning experiences across Healthcare, Banking, Retail and Education. Proficient in Storyline 360, Rise, custom JavaScript interactions, LMS administration, AR/VR, and multi-language localisation across 16–22 languages.</p>
+  <div class="hero-actions">
+    <a href="work.html" class="btn-primary">See My Work →</a>
+    <a href="contact.html" class="btn-ghost">Let's Talk</a>
+  </div>
+  <div class="stats-bar">
+    <div class="stat"><span class="stat-n">7+</span><span class="stat-l">Years in L&D</span></div>
+    <div class="stat"><span class="stat-n">20+</span><span class="stat-l">Portfolio projects</span></div>
+    <div class="stat"><span class="stat-n">16+</span><span class="stat-l">Languages localised</span></div>
+    <div class="stat"><span class="stat-n">5+</span><span class="stat-l">Industries served</span></div>
+  </div>
+</section>
+
+<div class="ticker-wrap">
+  <div class="ticker">
+    <span class="ticker-item">Articulate Storyline 360</span><span class="ticker-item">Rise 360</span><span class="ticker-item">Lectora</span><span class="ticker-item">Captivate</span><span class="ticker-item">xAPI · SCORM</span><span class="ticker-item">JavaScript</span><span class="ticker-item">ZapWorks AR/VR</span><span class="ticker-item">Blender 3D</span><span class="ticker-item">Vyond</span><span class="ticker-item">Camtasia</span><span class="ticker-item">Mindtickle LMS</span><span class="ticker-item">Docebo LMS</span><span class="ticker-item">Adobe Creative Suite</span><span class="ticker-item">Power Automate</span>
+    <span class="ticker-item">Articulate Storyline 360</span><span class="ticker-item">Rise 360</span><span class="ticker-item">Lectora</span><span class="ticker-item">Captivate</span><span class="ticker-item">xAPI · SCORM</span><span class="ticker-item">JavaScript</span><span class="ticker-item">ZapWorks AR/VR</span><span class="ticker-item">Blender 3D</span><span class="ticker-item">Vyond</span><span class="ticker-item">Camtasia</span><span class="ticker-item">Mindtickle LMS</span><span class="ticker-item">Docebo LMS</span><span class="ticker-item">Adobe Creative Suite</span><span class="ticker-item">Power Automate</span>
+  </div>
+</div>
+
+<section class="inner">
+  <div class="eyebrow fade-up">What I Do</div>
+  <h2 class="section-title fade-up">Design thinking meets<br><em>engineering precision.</em></h2>
+  <div class="pillars">
+    <div class="pillar fade-up stagger-1">
+      <div class="pillar-num">01</div><span class="pillar-icon">✏️</span>
+      <h3 class="pillar-title">Instructional Design</h3>
+      <p class="pillar-body">Scenario-based learning, branching narratives, performance assessments, and ADA-compliant content architecture grounded in ADDIE, SAM, and Bloom's Taxonomy — designed for measurable behaviour change.</p>
+      <div class="pillar-tags"><span class="tag">Storyline 360</span><span class="tag">Rise 360</span><span class="tag">Storyboarding</span><span class="tag">ADA/508</span></div>
+    </div>
+    <div class="pillar fade-up stagger-2">
+      <div class="pillar-num">02</div><span class="pillar-icon">⚡</span>
+      <h3 class="pillar-title">eLearning Development</h3>
+      <p class="pillar-body">Building beyond the authoring tool default — custom JavaScript interactions, API integrations, AR/VR experiences via ZapWorks, 3D with Blender, animated video with Vyond, and SCORM/xAPI packaging for any LMS.</p>
+      <div class="pillar-tags"><span class="tag">JavaScript</span><span class="tag">ZapWorks</span><span class="tag">Blender</span><span class="tag">SCORM · xAPI</span></div>
+    </div>
+    <div class="pillar fade-up stagger-3">
+      <div class="pillar-num">03</div><span class="pillar-icon">🌍</span>
+      <h3 class="pillar-title">Localisation & LMS</h3>
+      <p class="pillar-body">End-to-end localisation across 16–22 languages, LMS administration on Mindtickle and Docebo, SCORM Cloud management, and workflow automation with Power Automate to multiply team output.</p>
+      <div class="pillar-tags"><span class="tag">16-22 Languages</span><span class="tag">Mindtickle</span><span class="tag">Docebo</span><span class="tag">Power Automate</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="inner work-bg">
+  <div class="eyebrow fade-up">Selected Work</div>
+  <h2 class="section-title fade-up">Case studies that show<br><em>how I think.</em></h2>
+  <div class="card-grid card-grid-2" style="margin-top:3rem">
+    <a href="https://madhukumar5290.github.io/Anti-MoneyLaundering/" target="_blank" class="card fade-up" style="text-decoration:none;color:inherit">
+      <div class="card-num">01</div><div class="card-cat">Compliance · Banking · End-to-End Course</div>
+      <h3 class="card-title">Anti-Money Laundering</h3>
+      <p class="card-body">A fully authored, interactive AML compliance course — engaging branching scenarios that take learners through real-world financial crime detection workflows.</p>
+      <div class="card-tags"><span class="tag">Storyline 360</span><span class="tag">Branching</span><span class="tag">SCORM</span></div>
+      <div class="card-arrow">View course →</div>
+    </a>
+    <a href="https://madhukumar5290.github.io/DragandDropWithTabOrder/" target="_blank" class="card fade-up" style="text-decoration:none;color:inherit">
+      <div class="card-num">02</div><div class="card-cat">Accessibility · ADA-Compliant · Interaction</div>
+      <h3 class="card-title">Drag & Drop with Accessibility</h3>
+      <p class="card-body">Custom drag-and-drop interaction built with full keyboard navigation and tab-order support — demonstrating how accessibility can be engineered into complex interactions from the start.</p>
+      <div class="card-tags"><span class="tag">Storyline 360</span><span class="tag">ADA/508</span><span class="tag">JavaScript</span></div>
+      <div class="card-arrow">View course →</div>
+    </a>
+    <a href="https://madhukumar5290.github.io/SWOTAnalysis/" target="_blank" class="card fade-up" style="text-decoration:none;color:inherit">
+      <div class="card-num">03</div><div class="card-cat">Flash-to-HTML · Conversion · Interactive</div>
+      <h3 class="card-title">Personal SWOT Analysis</h3>
+      <p class="card-body">A Flash-to-HTML5 conversion project — preserving interactivity and learning integrity while modernising delivery for current browsers and mobile devices.</p>
+      <div class="card-tags"><span class="tag">HTML5</span><span class="tag">Storyline</span><span class="tag">Mobile-ready</span></div>
+      <div class="card-arrow">View course →</div>
+    </a>
+    <a href="work.html" class="card fade-up" style="text-decoration:none;color:inherit;display:flex;align-items:center;justify-content:center;min-height:200px">
+      <div style="text-align:center">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--accent);margin-bottom:.75rem">20+ projects</div>
+        <div class="card-arrow">See all work →</div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section class="inner">
+  <div class="eyebrow fade-up">Competency Map</div>
+  <div class="radar-wrap">
+    <div>
+      <h2 class="section-title fade-up">Where I sit across<br><em>the L&D spectrum.</em></h2>
+      <p style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;line-height:1.7;color:var(--muted);max-width:480px;margin-top:1rem" class="fade-up">Seven years of practice across five industries — the radar maps five dimensions honestly, built from real project experience.</p>
+      <div class="radar-legend">
+        <div class="rl-item fade-up"><div class="rl-dot"></div><div><div class="rl-title">Instructional Design</div><div class="rl-desc">ID models, storyboarding, learning theory applied as structural decisions.</div></div></div>
+        <div class="rl-item fade-up"><div class="rl-dot"></div><div><div class="rl-title">Technical Development</div><div class="rl-desc">JavaScript, custom interactions, AR/VR, 3D, video production.</div></div></div>
+        <div class="rl-item fade-up"><div class="rl-dot"></div><div><div class="rl-title">Accessibility & Standards</div><div class="rl-desc">ADA/508 compliance, SCORM/xAPI packaging, LMS compatibility.</div></div></div>
+        <div class="rl-item fade-up"><div class="rl-dot"></div><div><div class="rl-title">Localisation</div><div class="rl-desc">16–22 language workflows, RTL support, multi-region deployment.</div></div></div>
+        <div class="rl-item fade-up"><div class="rl-dot"></div><div><div class="rl-title">LMS & Operations</div><div class="rl-desc">Platform admin (Mindtickle, Docebo, SCORM Cloud), Power Automate.</div></div></div>
+      </div>
+    </div>
+    <div class="fade-up"><canvas id="radar" width="400" height="400"></canvas></div>
+  </div>
+</section>
+
+<div class="testimonial-bg">
+  <div class="testimonial-inner fade-up">
+    <div class="testimonial-quote">Madhu is a highly skilled professional with fantastic ideas, attention to detail, and delivers high impact programs that produce amazing results.</div>
+    <div class="testimonial-author">Amit Goyal</div>
+    <div class="testimonial-role">Sr. Director Content & Operations · Acadecraft Private Limited</div>
+  </div>
+</div>
+
+<div class="cta-band">
+  <div class="eyebrow" style="justify-content:center">Let's build something</div>
+  <h2 class="cta-band-title">Most IDs design it. Most devs build it.<br><em>I do both.</em></h2>
+  <a href="contact.html" class="btn-dark">Get in Touch →</a>
+  <a href="work.html" class="btn-dark" style="background:transparent;color:var(--bg);border:2px solid var(--bg)">See My Work</a>
+</div>
+
+<footer>
+  <div class="footer-logo">Madhu Kumar Sikilammetla · Instructional Designer & eLearning Developer · 2024</div>
+  <ul class="footer-links">
+    <li><a href="https://www.linkedin.com/in/madhu-kumar-sikilammetla-22694598" target="_blank">LinkedIn</a></li>
+    <li><a href="work.html">Work</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+<script src="main.js"></script>
+<script>
+new Chart(document.getElementById('radar').getContext('2d'),{
+  type:'radar',
+  data:{
+    labels:['Instructional\nDesign','Technical\nDev','Accessibility\n& Standards','Localisation','LMS &\nOperations'],
+    datasets:[{label:'Madhu Kumar',data:[90,82,85,88,80],backgroundColor:'rgba(212,168,83,.12)',borderColor:'rgba(212,168,83,.8)',borderWidth:2,pointBackgroundColor:'rgba(212,168,83,1)',pointBorderColor:'rgba(10,12,15,1)',pointBorderWidth:2,pointRadius:5}]
+  },
+  options:{responsive:true,scales:{r:{min:0,max:100,ticks:{display:false,stepSize:25},grid:{color:'rgba(255,255,255,.06)'},angleLines:{color:'rgba(255,255,255,.06)'},pointLabels:{color:'rgba(232,228,220,.6)',font:{family:"'DM Mono',monospace",size:10}}}},plugins:{legend:{display:false}}}
+});
+</script>
+</body>
+</html>
